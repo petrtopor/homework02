@@ -1,1 +1,1 @@
-Change made in TESTING branch
+Свёрстана страница добавления места с применением flexbox.
