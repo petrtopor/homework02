@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #000;
+$distance-from-left: 104px;
+//$main-width: 1232px;
+//$form-width: 400px;
+$unit-size: 8px;
+$units-in-col: 50;
+$units-in-col-margin: 1;
+$cols_count: 3;
+$col-size: $unit-size * $units-in-col;
+$col-margin: $unit-size * $units-in-col-margin;
+$main-width: ($col-size + 2 * $col-margin) * $cols_count;
+$font-size-big: 22px;
+$font-size-regular: 14px;
+$font-size-small: 12px;
+$line-height-big: 35px;
+$line-height-regular: 20px;
+$line-height-small: 17px;
+$header-height-in-units: 6;
+$header-height: $header-height-in-units * $unit-size;
+
+*
+{
+  //border: 0;
+}
+
+html
+{
+  height: 100%;
+}
+
+body
+{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  font-family: Roboto Slab;
+}
+
+header
+{
+  display: flex;
+  flex-direction: row;
+  background-color: dodgerblue;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: $header-height;
+  .row
+  {
+    margin: 0;
+    .col-1
+    {
+      display: flex;
+      h2
+      {
+        margin: 0;
+        border: 0;
+        padding: 2*$unit-size 0 0 0;
+        font-size: $font-size-big;
+        color: white;
+      }
+    }
+    .col-1.price
+    {
+      flex-direction: row;
+      justify-content: flex-end;
+      p
+      {
+        color: white;
+      }
+      input
+      {
+        width: 14*$unit-size;
+        text-align: center;
+        font-size: $font-size-big;
+        background-color: blue;
+        color: white;
+        margin: 0 $unit-size 0 $unit-size;
+        border-style: none;
+        border-width: 0;
+      }
+      .ruble-sign
+      {
+        @import url("http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic");
+        font-family: 'PT Sans', serif;
+      }
+    }
+    .col-1.add-place
+    {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      input
+      {
+        width: 24*$unit-size;
+        text-align: center;
+        font-size: $font-size-regular;
+        font-family: Roboto Slab;
+        background-color: blue;
+        color: white;
+        margin: 0 $unit-size 0 $unit-size;
+        border-style: none;
+        border-width: 0;
+      }
+      button
+      {
+        width: 24*$unit-size;
+        text-align: center;
+        font-size: $font-size-regular;
+        font-family: Roboto Slab;
+        background-color: blue;
+        color: white;
+        margin: 0 $unit-size 0 $unit-size;
+        border-style: none;
+        border-width: 0;
+      }
+    }
+  }
+}
+main
+{
+  flex: 1 0 auto;
+  //padding: 20px;
+  display: flex;
+  flex-direction: row;
+  //background-color: green;
+  justify-content: center;
+}
+footer
+{
+  flex-shrink: 0;
+  //padding: 20px;
+  display: flex;
+  flex-direction: row;
+  //background-color: blue;
+  justify-content: center;
+  height: 64px;
+  .main-space
+  {
+    font-size: $font-size-small;
+  }
+}
+
+.left-space, .right-space
+{
+  display: flex;
+}
+.main-space
+{
+  width: $main-width;
+  margin: 0 $col-margin 0 $col-margin;
+  display: flex;
+  flex-direction: column;
+}
+.spacer
+{
+  height: 17*$unit-size;
+}
+.row
+{
+  display: flex;
+  flex-direction: row;
+  margin: 5*$unit-size 0 0 0;
+}
+.col-1
+{
+  display: flex;
+  flex-direction: column;
+  width: $col-size;
+  margin: 0 $col-margin 0 $col-margin;
+  #back-to-list
+  {
+    display: flex;
+    //margin: 5*$unit-size 0 0 0;
+    height: 2*$unit-size;
+    p
+    {
+      font-size: $font-size-regular;
+      margin: 0;
+      padding: 0;
+      //line-height: 20/14;
+    }
+  }
+  #caption
+  {
+    display: flex;
+    color: white;
+    padding: 2*$unit-size 0 6*$unit-size 0;
+    height: 2*$unit-size;
+    h2
+    {
+      font-size: $font-size-big;
+      line-height: 35/22;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  #form
+  {
+    //background-color: bisque;
+
+    display: flex;
+    flex-direction: column;
+    //margin: 5*$unit-size 0px 0px 0px;
+    .input-field
+    {
+      display: flex;
+      flex-direction: column;
+      margin: 0px 0px 3*$unit-size 0px;
+      p
+      {
+        font-size: $font-size-regular;
+        margin: 0;
+        padding: 0;
+      }
+      input, select
+      {
+        height: 4*$unit-size;
+        margin: $unit-size 0px 0px 0px;
+        width: 100%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: grey;
+      }
+      .image-photo-placeholder
+      {
+        margin: $unit-size 0px 0px 0px;
+        padding: $unit-size $unit-size $unit-size $unit-size;
+        .photo-image
+        {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+.col-2
+{
+  display: flex;
+  flex-direction: column;
+  width: $col-size * 2 + $col-margin * 2;
+  margin: 0 $col-margin 0 $col-margin;
+
+  p
+  {
+    margin: 0;
+    padding: 0;
+  }
+
+  section#map
+  {
+    #map-placeholder
+    {
+      p
+      {
+        font-size: $font-size-regular;
+        margin-bottom: $unit-size;
+      }
+      #yandex-map-interactive
+      {
+        img
+        {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*
+body
+{
+  font: 100% $font-stack;
+  color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  margin:0 auto;
+}
+p
+{
+  font-family: "Roboto Slab";
+}
+.center-content
+{
+  display: flex;
+  flex-direction: column;
+  //width: 1232px;
+}
+.left-space
+{
+  display: flex;
+}
+.right-space
+{
+  display: flex;
+}
+h2
+{
+  font-size: $font-size-big;
+  font-family: "Roboto Slab";
+}
+
+header
+{
+  height: 48px;
+  color: #fff;
+  background-color: #4296ea;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  p
+  {
+    font-size: $font-size-regular;
+    font-family: "Roboto Slab";
+  }
+  #header-placeholder
+  {
+    margin: 0px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #content
+    {
+      display: flex;
+      flex-direction: row;
+      #logo
+      {
+        display: flex;
+        width: 320px;
+        p
+        {
+          display: flex;
+          //font-size: 22px;
+          font-weight: bold;
+          //text-align: center;
+
+        }
+      }
+      #total-count
+      {
+        display: flex;
+        input
+        {
+          display: flex;
+          width: 112px;
+          background-color: #0073e6;
+        }
+        p
+        {
+          display: flex;
+          font-size: $font-size-regular;
+          padding-top: 17px;
+        }
+      }
+      #add-button
+      {
+        display: flex;
+      }
+    }
+  }
+}
+img
+{
+  max-width: 100%;
+}
+main
+{
+  margin: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  p
+  {
+    font-size: $font-size-regular;
+  }
+  //width: 1232px;
+  .left-space
+  {
+    display: flex;
+  }
+  .right-space
+  {
+    display: flex;
+  }
+  .center-content
+  {
+    display: flex;
+    flex-direction: column;
+    //width: 1232px;
+  }
+  #back-to-list
+  {
+    display: flex;
+  }
+  .main-content
+  {
+    display: flex;
+    flex-direction: row;
+  }
+  #add-place
+  {
+    display: flex;
+  }
+  #form
+  {
+    display: flex;
+    flex-direction: column;
+    width: $form-width;
+    .input-field
+    {
+      margin-bottom: 24px;
+    }
+    .photo
+    {
+      .image-photo-placeholder
+      {
+        padding: 8px 8px 8px 8px;
+        img
+        {
+          //max-width: 100%;
+          //max-height: 100%;
+        }
+      }
+    }
+
+    input
+    {
+      width: 100%;
+      height: 32px;
+    }
+    select
+    {
+      width: 100%;
+      height: 32px;
+    }
+
+  }
+  #map
+  {
+    display: flex;
+    padding: 0px 0px 0px 2 * $cell;
+    width: $main-width - $form-width;
+  }
+}
+
+footer
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  #footer-logo
+  {
+    width: $main-width;
+    font-size: $font-size-small;
+  }
+}
+*/
